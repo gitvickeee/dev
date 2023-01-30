@@ -1,0 +1,27 @@
+environment : query
+
+server:
+  port: 8500
+
+spring:
+  application:
+    name: queryLearning
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+   username: "root"
+   password: "Codefactory20."
+   url: "jdbc:mysql://localhost:3306/practice"
+
+  security:
+    basic:
+      enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+

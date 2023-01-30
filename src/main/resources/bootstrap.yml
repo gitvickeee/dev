@@ -1,0 +1,23 @@
+server:
+  port: 8500
+spring:
+  application:
+    name: queryLearning
+  profiles:
+    active: local
+  cloud:
+    discovery:
+      enabled: true
+    consul:
+      enabled: true
+#      host: 135.181.194.241
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        enabled: true
+        register: true
+        heartbeat:
+          enabled: true
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${server.port}}}
+        healthCheckPath: /health
